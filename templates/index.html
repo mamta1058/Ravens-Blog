@@ -49,10 +49,10 @@
                  {% else %}
                 </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
+              <a class="nav-link" href="{% url 'user:register'  %}">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Log In</a>
+              <a class="nav-link" href="{% url 'user:login'  %}">Login</a>
             </li>
             {% endif %}
             {% endblock body %}
@@ -66,7 +66,11 @@
         <div class="container">
           <h1 class="masthead-heading mb-0"><u>Ravens Blog</u></h1>
           <h2 class="masthead-subheading mb-0">Django Dynamic Blog</h2>
-          <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
+
+           <li class="nav-item active"> 
+             <a class="btn btn-primary rounded-pill" href="{% url 'about'  %}">Learn More</a>        
+            </li> 
+               <!-- <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a> -->
         </div>
       </div>
       <div class="bg-circle-1 bg-circle"></div>
@@ -86,7 +90,32 @@
           <div class="col-lg-6 order-lg-1">
             <div class="p-5">
               <h2 class="display-4">Mamta Sonkaria</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+              <p>	
+                  
+                <div> CAREER OBJECTIVE</div>
+                
+                <div> To seek a position in an organization, which would offer me a healthy work culture, an atmosphere that enhances my technical skills, offers challenging work environment and excellent growth prospects and would speed up my learning curve by working with best minds in the profession.   
+                </div>
+                
+                
+              <div>TECHNICAL SKILLS</div>
+                
+              <div>  Operating System :	Windows-07/08/10</div>
+              <div>  Programming Languages	: Core Python, Html, CSS.</div>
+                <div>Database	: MySQL</div>
+               <div> Software Knowledge :	Idle (python 3.6), Django</div>
+                
+                
+                                                       
+                                                          
+                <div>STRENGTHS</div>
+               <div> ●	Ability to work either alone or as part of a team (preferred).</div>
+               <div> ●	Good grasping Power</div>
+               <div> ●	Highly Motivated.</div>
+                <div>●	Have good patience</div>
+                <div>●	Positive Attitude</div>
+                
+                 </p>
             </div>
           </div>
         </div>
@@ -104,8 +133,29 @@
           <div class="col-lg-6">
             <div class="p-5">
               <h2 class="display-4">Reena</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-            </div>
+              <p><div> CAREER OBJECTIVE</div>
+                
+                <div> To seek a position in an organization, which would offer me a healthy work culture, an atmosphere that enhances my technical skills, offers challenging work environment and excellent growth prospects and would speed up my learning curve by working with best minds in the profession.   
+                </div>
+                
+                
+              <div>  Technical Skills</div>
+                
+              <div>  Operating System :	Windows-07/08/10</div>
+              <div>  Programming Languages	: Core Python, Html, CSS.</div>
+                <div>Database	: MySQL</div>
+               <div> Software Knowledge :	Idle (python 3.6), Django</div>
+                
+                
+                                                       
+                                                          
+                <div>STRENGTHS</div>
+               <div> ●	Ability to work either alone or as part of a team (preferred).</div>
+               <div> ●	Good grasping Power</div>
+               <div> ●	Highly Motivated.</div>
+                <div>●	Have good patience</div>
+                <div>●	Positive Attitude</div>
+                </div>
           </div>
         </div>
       </div>
