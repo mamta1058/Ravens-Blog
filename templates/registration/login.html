@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 <div  class="container" >
-<div class="row">
+    <div class="row">
     <div class="col-md-6 offset-md-3">
         <h1 style="text-align:center;" >Login</h1>
         <hr>
@@ -14,10 +14,13 @@
             <br>
             <div style = 'margin-left:220px'> 
                 <button type = "submit" class = "btn btn-danger" >Login</button>
+                <a class='btn btn-primary' href="{% url 'password_reset' %}">Forgot Password</a>                
             </div>
+        
         </form>
     </div>
   </div>
+</div>
 
 
 {% endblock body %}

@@ -1,0 +1,22 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: password reset
+From: webmaster@localhost
+To: reenaatal598@gmail.com
+Date: Wed, 21 Nov 2018 08:24:09 -0000
+Message-ID: <154278864958.7528.16642513358901913450@MamtaSonkaria.mshome.net>
+
+
+To initiate the password reset process for your reena TestSite Account,
+click the link below:
+
+http://127.0.0.1:8000/user/reset/Ng/51h-7afb7a08f339e4283e8d/
+
+If clicking the link above doesn't work, please copy and paste the URL in a new browser
+window instead.
+
+Sincerely,
+The TestSite Team
+
+-------------------------------------------------------------------------------

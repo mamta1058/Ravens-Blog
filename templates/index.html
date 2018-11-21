@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -42,18 +43,30 @@
                 
               </ul>
           <ul class="navbar-nav ml-auto">
+              {% block body %}
+              {% if request.user.is_authenticated %}
             <li class="nav-item">
-                        {% block body %}
-                        {% if request.user.is_authenticated %}
-                        <h4 style="color:antiquewhite;">{{request.user.username}}</h4> 
-                 {% else %}
+                        
+                        <h4 style="color:antiquewhite;">{{request.user.username}}</h4>
+                 
                 </li>
+                &nbsp;
+                &nbsp;
+                <li>
+                    <i class="fa fa-sign-out" href="{% url 'user:logout' %}" style="color: aliceblue; font-size:36px"></i>
+
+                </li>
+                {% else %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'user:register'  %}">Register</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'user:login'  %}">Login</a>
             </li>
+            <li class="nav-item">
+              <a href="{% url 'password_reset' %}">reset password</a>
+            </li>
+            
             {% endif %}
             {% endblock body %}
           </ul>
@@ -132,7 +145,7 @@
           </div>
           <div class="col-lg-6">
             <div class="p-5">
-              <h2 class="display-4">Reena</h2>
+              <h2 class="display-4">Reena Atal</h2>
               <p><div> CAREER OBJECTIVE</div>
                 
                 <div> To seek a position in an organization, which would offer me a healthy work culture, an atmosphere that enhances my technical skills, offers challenging work environment and excellent growth prospects and would speed up my learning curve by working with best minds in the profession.   
@@ -144,7 +157,7 @@
               <div>  Operating System :	Windows-07/08/10</div>
               <div>  Programming Languages	: Core Python, Html, CSS.</div>
                 <div>Database	: MySQL</div>
-               <div> Software Knowledge :	Idle (python 3.6), Django</div>
+               <div> Software Knowledge :	Idle (python 3.6), Django (web framework)</div>
                 
                 
                                                        
@@ -182,7 +195,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-black">
       <div class="container">
-        <p class="m-0 text-center text-white small">Made By - Mamta Sonkaria  &  Reena  under  guidance  of  Anshuman  Anand  Singh</p>
+        <p class="m-0 text-center text-white small">Made By - Mamta Sonkaria  &  Reena Atal under  guidance  of  Anshuman  Anand  Singh</p>
       </div>
       <!-- /.container -->
     </footer>

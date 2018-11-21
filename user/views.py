@@ -54,6 +54,7 @@ def loginUser(request):
         login(request,user)
         return redirect("index")
     return render(request,"login.html",context)
+    
 def logoutUser(request):
     logout(request)
     messages.success(request,"Successfully logged out")

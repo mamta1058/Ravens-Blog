@@ -14,12 +14,14 @@ def articles(request):
     articles = Article.objects.all()
 
     return render(request,"articles.html",{"articles":articles})
+
 def index(request):
     return render(request,"index.html")
     
 def about(request):
     return render(request,"about.html")
 @login_required(login_url = "user:login")
+
 def dashboard(request):
     articles = Article.objects.filter(author = request.user)
     context = {
@@ -27,6 +29,7 @@ def dashboard(request):
     }
     return render(request,"dashboard.html",context)
 @login_required(login_url = "user:login")
+
 def addArticle(request):
     form = ArticleForm(request.POST or None,request.FILES or None)
 
@@ -39,6 +42,7 @@ def addArticle(request):
         messages.success(request,"Article created successfully")
         return redirect("article:dashboard")
     return render(request,"addarticle.html",{"form":form})
+
 def detail(request,id):
     #article = Article.objects.filter(id = id).first()   
     article = get_object_or_404(Article,id = id)
@@ -46,6 +50,7 @@ def detail(request,id):
     comments = article.comments.all()
     return render(request,"detail.html",{"article":article,"comments":comments})
 @login_required(login_url = "user:login")
+
 def updateArticle(request,id):
 
     article = get_object_or_404(Article,id = id)
@@ -62,6 +67,7 @@ def updateArticle(request,id):
 
     return render(request,"update.html",{"form":form})
 @login_required(login_url = "user:login")
+
 def deleteArticle(request,id):
     article = get_object_or_404(Article,id = id)
 
@@ -70,6 +76,7 @@ def deleteArticle(request,id):
     messages.success(request,"Makale Başarıyla Silindi")
 
     return redirect("article:dashboard")
+
 def addComment(request,id):
     article = get_object_or_404(Article,id = id)
 
@@ -83,4 +90,5 @@ def addComment(request,id):
 
         newComment.save()
     return redirect(reverse("article:detail",kwargs={"id":id}))
-    
+
+ 
