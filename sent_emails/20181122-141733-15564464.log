@@ -1,0 +1,22 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: password reset
+From: TestSite Team <noreply@example.com>
+To: mamtasonkaria110@gmail.com
+Date: Thu, 22 Nov 2018 08:47:33 -0000
+Message-ID: <154287645330.9128.15541609112595112981@MamtaSonkaria.mshome.net>
+
+
+To initiate the password reset process for your mamta TestSite Account,
+click the link below:
+
+http://127.0.0.1:8000/user/reset/NQ/51i-f6dad54f7e66a05918fd/
+
+If clicking the link above doesn't work, please copy and paste the URL in a new browser
+window instead.
+
+Sincerely,
+The TestSite Team
+
+-------------------------------------------------------------------------------

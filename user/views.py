@@ -48,15 +48,15 @@ def loginUser(request):
 
         if user is None:
             messages.info(request,"Incorrect Credentials")
-            return render(request,"login.html",context)
+            return render(request,"registration/login.html",context)
 
         messages.success(request,"Successfully logged In")
         login(request,user)
         return redirect("index")
-    return render(request,"login.html",context)
+    return render(request,"registration/login.html",context)
     
 def logoutUser(request):
     logout(request)
     messages.success(request,"Successfully logged out")
-    return redirect("index")
+    return redirect("/login")
 
