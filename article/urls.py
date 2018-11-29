@@ -13,6 +13,9 @@ urlpatterns = [
     path('delete/<int:id>',views.deleteArticle,name = "delete"),
     path('',views.articles,name = "articles"),
     path('comment/<int:id>',views.addComment,name = "comment"),
+    # path('comment/<int:id>',views.deleteComment,name = "comment"),
+
+
 
 
 

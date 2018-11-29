@@ -91,4 +91,28 @@ def addComment(request,id):
         newComment.save()
     return redirect(reverse("article:detail",kwargs={"id":id}))
 
- 
+
+
+
+# def deletecomment(request,id):
+#     article = get_object_or_404(Article,id = id)
+
+#     if request.method == "POST":
+#         comment_author = request.POST.get("comment_author")
+#         comment_content = request.POST.get("comment_content")
+
+#         newComment = Comment(comment_author = comment_author, comment_content = comment_content)
+#         newComment.article = article
+
+#         newComment.delete()
+#     return redirect(reverse("article:detail",kwargs={"id":id}))
+
+
+# def deleteComment(request):
+#     comment = get_object_or_404(Comment,id = id)
+
+#     comment.delete()
+
+#     messages.success(request,"id")
+
+#     return redirect("comment:comment")

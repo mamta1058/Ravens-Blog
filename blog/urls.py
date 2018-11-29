@@ -27,5 +27,7 @@ urlpatterns = [
     path('about/',views.about,name = "about"),
     path('articles/',include("article.urls")),
     path('',include("user.urls")),
+    path('auth/', include('social_django.urls', namespace='social')),  
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

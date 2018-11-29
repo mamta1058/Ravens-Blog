@@ -2,25 +2,51 @@
 {% block body %}
 {% load crispy_forms_tags %}
 
-<div class="container" >
-    
+<div class="container">
+        <!-- <h5 style="background-color:khaki; color:black;"> -->
  <div class="row">        
     <div class="col-md-6 offset-md-3">
-        <h1 style="text-align:center;" >Login</h1>
+
+        <h1 style="text-align:center;">Login</h1>
+
         <hr>
         <form method = "post">
             {% csrf_token %}
             
             {{form|crispy}}
-            <br>
-            <div style = 'margin-left:220px'> 
+            <br>            
+    
+            <div style = 'margin-left:150px'> 
                 <button type = "submit" class = "btn btn-danger" >Login</button>
-                <a class='btn btn-primary' href="{% url 'password_reset' %}">Forgot Password</a>                
+                <a class='btn btn-primary' href="{% url 'password_reset' %}">Forgot Password</a>   
+             
 
             </div>
+
+            <div style = 'margin-left:180px'> 
+                <br>
+                <div style='margin-left:50px'>
+               <p> <strong>-- OR --</strong></p></div>
+
+                <a class='btn btn-primary' href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
+            </div>
+
+
+            
+                
             </form>
+            
     
     </div>
+
   </div>
+
+
+  <!-- <div style = 'margin-left:500px'> 
+    <strong>-- OR --</strong></p>
+  <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a><br>
+ -->
+
+
 
 {% endblock body %}

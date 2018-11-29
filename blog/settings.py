@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     "ckeditor",
     'django_cleanup',
+    'social_django',
 
     
 ]
@@ -54,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'social_django.middleware.SocialAuthExceptionMiddleware',  
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -70,10 +73,20 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'social_django.context_processors.backends',  
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
@@ -143,6 +156,10 @@ CKEDITOR_CONFIGS = {
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+SOCIAL_AUTH_GITHUB_KEY = '7458b42c91f3886a7b15'
+SOCIAL_AUTH_GITHUB_SECRET = 'ca08b3805677762b70d05e15c08ce729ba15b880'
+
+
 # EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 # EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
@@ -154,4 +171,12 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'TestSite Team <noreply@example.com>'
 
 
-lOGIN_REDIRECT = '/'
+# lOGIN_REDIRECT = ''
+
+# LOGIN_REDIRECT_URL = '/'
+
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/'
+
